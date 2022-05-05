@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: url(../asset/cats-like-the-night-ab-1600x900.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.5);
+  outline: none;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  padding: 25px 100px;
+}
+
+.container-form:focus {
+  border: 1px solid #313131;
+}
+
+.form-name {
+  margin-left: 200px;
+  font-family: "Fenix", serif;
+}
+
+.container {
+  position: relative;
+  padding: 20px;
+}
+
+.container .label-form {
+  font-family: "Fenix", serif;
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.container > * {
+  display: block;
+}
+
+.inputfield {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 5px #b100f7;
+          box-shadow: 0px 5px 5px #b100f7;
+}
+
+#Email {
+  height: 30px;
+  width: 550px;
+}
+
+#Title {
+  min-height: 30px;
+  max-height: 30px;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+#Message {
+  border-radius: 5px;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+  min-height: 100px;
+  max-height: 100px;
+  max-width: 550px;
+  min-width: 550px;
+  overflow-y: scroll;
+}
+
+.success {
+  border-color: var(#28a745);
+}
+
+.error {
+  border-color: var(#dc3545);
+}
+
+#form-button {
+  margin-left: 200px;
+  background-color: #0088f7;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fenix&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <form class="contact-form"  method="POST" >
+        
+        <div class="container-form" >
+            <h1 class="form-name"> Contact Form </h1>
+            <div class="container"> 
+                <label for="from" class="label-form " >Your Email</label>
+                <input type="text" id= "Email" name="from" class="inputfield" placeholder="Email Address" type="email" required>  
+            </div>
+        
+            <div class="container"> 
+                <label for="subject" class="label-form">Subject</label>
+                <input  type="text" id= "Title" name="subject" class="inputfield" placeholder="Subject" required>   
+            </div>
+        
+            <div class="container"> 
+                <label for="content" class="label-form">Your message</label>
+                <textarea  type="text" id="Message" name="content" class="inputfield"> </textarea>
+            </div>
+        
+            <div class="container"> 
+                <button type="submit" id="form-button">Send Email</button>
+            </div>       
+        
+        </div>       
+    </form>
+    <script src="script/script.js"></script>
+</body>
+</html>
