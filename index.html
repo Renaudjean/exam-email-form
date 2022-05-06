@@ -27,15 +27,20 @@
         
             <div class="container"> 
                 <label for="content" class="label-form">Your message</label>
-                <textarea  type="text" id="Message" name="content" class="inputfield"> </textarea>
+                <textarea  type="text" id="Message" name="content" class="inputfield" required> </textarea>
             </div>
         
             <div class="container"> 
                 <button type="submit" id="form-button">Send Email</button>
-            </div>       
-        
+            </div>  
         </div>       
     </form>
+    <div class="overlay hidden">
+        <div class="overlay-container ">
+            <h3 id="ResponseMessage"></h3>     
+            <button type="button" id="overlay-btn"> Okay </button>
+        </div>
+    </div>
     <script src="script/script.js"></script>
 </body>
 </html>

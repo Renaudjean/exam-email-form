@@ -98,4 +98,42 @@ body {
   padding: 20px;
   font-size: 20px;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-container {
+  background: white;
+  margin: 30% 30%;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  border: 2px solid black;
+}
+
+#ResponseMessage {
+  width: 180px;
+  margin: 50px auto;
+  text-align: center;
+  color: black;
+  font-family: "Fenix", serif;
+  font-size: 30px;
+}
+
+#overlay-btn {
+  background-color: #0088f7;
+  height: 20px;
+  width: 100px;
+}
 /*# sourceMappingURL=style.css.map */
