@@ -7,13 +7,13 @@ $warning-color: #ffc107;
     margin: 0;
 }
 
-body{
-    width: 100%;
-    height: 100%; 
-    background: url(../asset/cats-like-the-night-ab-1600x900.jpg);
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
+body{ 
+    background: url(../asset/cats-like-the-night-ab-1600x900.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .container-form {
@@ -21,26 +21,28 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 500px;
+    width: 550px;
+    // width: clamp(150px, 550px, 600px);
+    height: clamp(300px, 500px,500px);
     background: rgba(255, 255, 255, 0.5);
     outline: none;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     padding: 25px 100px;
+    margin: 1rem 0;
     &:focus {
         border: 1px solid #313131;
     }
 }
 
 .form-name {
-    margin-left: 200px; 
+    margin:0 auto; 
     font-family: $font;
 }
 
 .container{
     position: relative;
-
+    // width: clamp(100px,550px, 550px);
     padding: 20px;
     .label-form{  
         font-family: $font;
@@ -55,17 +57,23 @@ body{
 .inputfield{
  border-radius: 10px;
  box-shadow: 0px 5px 5px rgb(177, 0, 247); 
+ width: 550px;
+//  width: clamp(100px,550px, 550px);
 }
+
+
+
+
 #Email{
     height: 30px;
     width: 550px;
+    // width: clamp(200px,550px, 550px);
 }
 #Title{
     min-height: 30px;
     max-height: 30px;
-    min-width: 250px;
-    max-width: 250px;
-  
+    width: 250px;
+    // width: clamp(100px,250px, 250px);
 }
 #Message{
     border-radius: 5px;
@@ -73,11 +81,35 @@ body{
     scrollbar-width: thin;
     min-height: 100px;
     max-height: 100px;
-    max-width: 550px;
-    min-width: 550px;
+    width: 550px;
+    //  width: clamp(200px,550px, 550px);
     overflow-y: scroll;
-    
 }
+@media (max-width: 620px){
+    .container-form {
+        width: 350px;
+        padding: 50px;
+    }
+    .container{
+        width: 350px;
+    }
+    .inputfield{
+        width: 350px;
+    }
+    #Email{
+        width: 350px;
+        padding-left:0;
+    }
+    #Title{
+    width: 150px;
+    padding-left:0;
+    }
+    #Message{
+    width: 350px;
+    padding-left:0;
+    }
+}
+
 .success{
     border-color: var($success-color);
 }
@@ -86,7 +118,7 @@ body{
 }
 
 #form-button{
-    margin-left:200px ;
+    margin: 0 auto;
     background-color: rgb(0, 136, 247);
     border-radius: 10px;
     padding: 20px;
@@ -109,7 +141,7 @@ body{
     margin: 30% 30%;
     border-radius: 10px;
     text-align: center;
-    width: 400px;
+    width: clamp(350px, 400px, 400px);
     height: 200px;
     border: 2px solid black;
 }
@@ -123,7 +155,148 @@ body{
 }
 #overlay-btn{
     background-color: rgb(0, 136, 247);
-
     height: 20px;
     width: 100px;
 }
+
+section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(./bg0.jpg);
+    background-position-x: center;
+    background-size: cover;
+    animation: animateBg 50s linear infinite;
+}
+@keyframes animateBg {
+    0%,100%
+    {
+        transform:scale(1);
+    }
+    50%
+    {
+        transform:scale(1.2);
+    }
+}
+span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1)  ;
+    animation:  animate 3s linear infinite;
+    z-index: -100;
+}
+span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+@keyframes animate {
+    0%
+    {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70%
+    {
+        opacity: 0.5;
+
+    }
+    100%
+    {
+        transform: rotate(315deg) translateX(-1500px);
+        opacity: 0;
+
+    }
+    
+}
+span:nth-child(1){
+    top: 0;
+    right: 0;
+    left:initial;
+    animation-delay:0 ;
+    animation-duration: 1s;
+}
+
+span:nth-child(2){
+    top: 0;
+    right: 80px;
+    left:initial;
+    animation-delay:0.2s;
+    animation-duration: 3s;
+}
+
+span:nth-child(3){
+    top: 80px;
+    right: 0px;
+    left:initial;
+    animation-delay:0.4s ;
+    animation-duration: 2s;
+}
+
+span:nth-child(4){
+    top: 0;
+    right: 180px;
+    left:initial;
+    animation-delay:0.6s;
+    animation-duration: 1.5s;
+}
+
+span:nth-child(5){
+    top: 0;
+    right: 400px;
+    left:initial;
+    animation-delay:0.8s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(6){
+    top: 0;
+    right: 600px;
+    left:initial;
+    animation-delay:1s ;
+    animation-duration: 3s;
+}
+span:nth-child(7 ){
+    top: 300px;
+    right: 0px;
+    left:initial;
+    animation-delay:1s ;
+    animation-duration: 1.75s;
+}
+
+span:nth-child(8){
+    top: 0px;
+    right: 700px;
+    left:initial;
+    animation-delay:1.4s ;
+    animation-duration: 1.25s;
+}
+
+span:nth-child(9){
+    top: 0px;
+    right: 1000px;
+    left:initial;
+    animation-delay:0.75s ;
+    animation-duration: 2.25s;
+}
+
+span:nth-child(10){
+    top: 0px;
+    right: 1000px;
+    left:initial;
+    animation-delay:2.75s ;
+    animation-duration: 2.25s;
+}
+
+

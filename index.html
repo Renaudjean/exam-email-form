@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </section>
     <form class="contact-form"  method="POST" >
         
         <div class="container-form" >
@@ -18,11 +30,13 @@
             <div class="container"> 
                 <label for="from" class="label-form " >Your Email</label>
                 <input type="text" id= "Email" name="from" class="inputfield" placeholder="Email Address" type="email" required>  
+                <p class="emailalert hidden">Please insert a propper Email address</p>
             </div>
         
             <div class="container"> 
                 <label for="subject" class="label-form">Subject</label>
                 <input  type="text" id= "Title" name="subject" class="inputfield" placeholder="Subject" required>   
+                <p class="emailalert hidden">Please insert a propper Email address</p>
             </div>
         
             <div class="container"> 
@@ -41,6 +55,7 @@
             <button type="button" id="overlay-btn"> Okay </button>
         </div>
     </div>
+  
     <script src="script/script.js"></script>
 </body>
 </html>

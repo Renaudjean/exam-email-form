@@ -6,7 +6,9 @@ let messageIn = document.querySelector('#Message');
 let ResponseMessage = document.querySelector("#ResponseMessage");
 let overlay = document.querySelector(".overlay");
 let overlayBtn = document.querySelector("#overlay-btn");
-const emailReg = /(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)/mg;
+const emailReg = /(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)/;
+const subjectReg = /(^[a-zA-Z0-9_.]{6,})/;
+
 
 
 button.addEventListener("click", function(){
@@ -14,7 +16,10 @@ button.addEventListener("click", function(){
     form.onsubmit = e => {
             e.preventDefault();
         if(emailReg.test(emailIn.value) ){   
-            let xmlhttp = new XMLHttpRequest();
+            
+            if(subjectReg.test(titleIn.value)){
+                
+                let xmlhttp = new XMLHttpRequest();
             
             let information = `email=${emailIn.value}&title=${titleIn.value}&message=${messageIn.value}`;
         
@@ -37,16 +42,19 @@ button.addEventListener("click", function(){
                         overlayBtn.addEventListener("click",function(){
                         overlay.classList.add("hidden");
                     })
-                        emailIn.value="";
                         titleIn.value="";
                         messageIn.value="";
                 
             }
          }
-        }
-        else{
-            alert("email invalid!")
+        }else{
+            alert("Please enter more than 6 characters and do not add any special characters");
         }
     }
+        else{
+            alert("email invalid!");
+        }
+    }
+    
 })
 
