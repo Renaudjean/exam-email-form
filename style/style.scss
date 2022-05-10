@@ -2,9 +2,13 @@ $font:'Fenix', serif;
 $success-color: #28a745;
 $error-color: #dc3545;
 $warning-color: #ffc107;
+
 *{
     padding: 0;
     margin: 0;
+}
+html{
+    overflow: hidden;
 }
 
 body{ 
@@ -13,7 +17,7 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: hidden;
+  
 }
 
 .container-form {
@@ -21,9 +25,9 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
+    width: fit-content;
     // width: clamp(150px, 550px, 600px);
-    height: clamp(300px, 500px,500px);
+    height: clamp(200px, 550px,600px);
     background: rgba(255, 255, 255, 0.5);
     outline: none;
     border-radius: 0.25rem;
@@ -61,6 +65,24 @@ body{
 //  width: clamp(100px,550px, 550px);
 }
 
+.alert{
+    display: none;
+}
+
+.emailwar{
+    color: red;
+    font-family: $font;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+.subjectwar {
+    color: red;
+    font-family: $font;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
 
 
 
@@ -81,33 +103,13 @@ body{
     scrollbar-width: thin;
     min-height: 100px;
     max-height: 100px;
-    width: 550px;
-    //  width: clamp(200px,550px, 550px);
+    width: 550px;    
     overflow-y: scroll;
 }
-@media (max-width: 620px){
-    .container-form {
-        width: 350px;
-        padding: 50px;
-    }
-    .container{
-        width: 350px;
-    }
-    .inputfield{
-        width: 350px;
-    }
-    #Email{
-        width: 350px;
-        padding-left:0;
-    }
-    #Title{
-    width: 150px;
-    padding-left:0;
-    }
-    #Message{
-    width: 350px;
-    padding-left:0;
-    }
+
+.warning {
+    border-color: red;
+    box-shadow: 0px 5px 5px rgb(247, 0, 0); 
 }
 
 .success{
@@ -132,16 +134,19 @@ body{
     background: rgba(255, 255, 255, 0.25);
     top: 0;
     left: 0;
-    height:100%;
-    width: 100%;
+    height:95%;
+    width: 95%;
 }
 
 .overlay-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: rgb(255, 255, 255);
-    margin: 30% 30%;
     border-radius: 10px;
     text-align: center;
-    width: clamp(350px, 400px, 400px);
+    width: 400px;
     height: 200px;
     border: 2px solid black;
 }
@@ -159,12 +164,90 @@ body{
     width: 100px;
 }
 
+@media only screen and (max-width:800px){
+    .container-form {
+        width: fit-content;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+    .container{
+        width: 600px;
+    }
+    .inputfield{
+        width: 600px;
+    }
+    #Email{
+        width: 600px;
+        padding-left:0;
+    }
+    #Title{
+    width: 300px;
+    padding-left:0;
+    }
+    #Message{
+    width: 600px;
+    padding-left:0;
+    }
+    .overlay-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        margin: 0 auto;
+        text-align: center;
+        width: 650px;
+        height: 200px;
+      
+    }
+}
+@media only screen and (max-width:500px){
+    .container-form {
+        width: fit-content;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+    .container{
+        width: 300px;
+    }
+    .inputfield{
+        width: 300px;
+    }
+    #Email{
+        width: 300px;
+        padding-left:0;
+    }
+    #Title{
+    width: 100px;
+    padding-left:0;
+    }
+    #Message{
+    width: 300px;
+    padding-left:0;
+    }
+    .overlay-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        margin: 0 auto;
+        text-align: center;
+        width: 350px;
+        height: 200px;
+      
+    }
+}
+
+
 section{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
+    width: 90%;
+    height: 90%;
     background: url(./bg0.jpg);
     background-position-x: center;
     background-size: cover;

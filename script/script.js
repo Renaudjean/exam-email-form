@@ -1,13 +1,20 @@
 const form = document.querySelector('.contact-form');
 const button = document.querySelector('#form-button');
+
 let emailIn = document.querySelector('#Email');
+let errorEmail = document.querySelector('#emailerror');
+
 let titleIn = document.querySelector('#Title');
+let errorTitle = document.querySelector('#subjecterror');
+
 let messageIn = document.querySelector('#Message');
 let ResponseMessage = document.querySelector("#ResponseMessage");
+
 let overlay = document.querySelector(".overlay");
 let overlayBtn = document.querySelector("#overlay-btn");
+
 const emailReg = /(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)/;
-const subjectReg = /(^[a-zA-Z0-9_.]{6,})/;
+const subjectReg = /(^[a-zA-Z0-9_.\s]{6,})/;
 
 
 
@@ -48,11 +55,13 @@ button.addEventListener("click", function(){
             }
          }
         }else{
-            alert("Please enter more than 6 characters and do not add any special characters");
+            titleIn.classList.add("warning");
+            errorTitle.classList.remove("warning");
         }
     }
         else{
-            alert("email invalid!");
+            emailIn.classList.add("warning");
+            errorEmail.classList.remove("warning");
         }
     }
     

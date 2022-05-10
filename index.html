@@ -30,13 +30,13 @@
             <div class="container"> 
                 <label for="from" class="label-form " >Your Email</label>
                 <input type="text" id= "Email" name="from" class="inputfield" placeholder="Email Address" type="email" required>  
-                <p class="emailalert hidden">Please insert a propper Email address</p>
+                <p id="emailerror" class="emailwar alert">Please insert a propper Email address</span>
             </div>
         
             <div class="container"> 
                 <label for="subject" class="label-form">Subject</label>
                 <input  type="text" id= "Title" name="subject" class="inputfield" placeholder="Subject" required>   
-                <p class="emailalert hidden">Please insert a propper Email address</p>
+                <p  id="subjecterror" class="subjectwar alert">The subject cannot be less than 6 characters and cannot includ any special characters</p>
             </div>
         
             <div class="container"> 
